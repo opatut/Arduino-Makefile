@@ -762,12 +762,12 @@ endif
 ########################################################################
 # Local sources
 
-LOCAL_C_SRCS    ?= $(wildcard *.c)
-LOCAL_CPP_SRCS  ?= $(wildcard *.cpp)
-LOCAL_CC_SRCS   ?= $(wildcard *.cc)
-LOCAL_PDE_SRCS  ?= $(wildcard *.pde)
-LOCAL_INO_SRCS  ?= $(wildcard *.ino)
-LOCAL_AS_SRCS   ?= $(wildcard *.S)
+LOCAL_C_SRCS    ?= $(shell find . -name '*.c')
+LOCAL_CPP_SRCS  ?= $(shell find . -name '*.cpp')
+LOCAL_CC_SRCS   ?= $(shell find . -name '*.cc')
+LOCAL_PDE_SRCS  ?= $(shell find . -name '*.pde')
+LOCAL_INO_SRCS  ?= $(shell find . -name '*.ino')
+LOCAL_AS_SRCS   ?= $(shell find . -name '*.S')
 LOCAL_SRCS      = $(LOCAL_C_SRCS)   $(LOCAL_CPP_SRCS) \
 		$(LOCAL_CC_SRCS)   $(LOCAL_PDE_SRCS) \
 		$(LOCAL_INO_SRCS) $(LOCAL_AS_SRCS)
